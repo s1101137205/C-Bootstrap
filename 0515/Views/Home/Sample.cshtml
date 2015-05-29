@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Sample";
+}
+
+<h2>Sample</h2>
+<table class="table">
+    <tr> <td>id</td> <td>StuNo </td><td>StuName</td></tr>
+</table>
+
+@section scripts{
+    <script>
+        $(function () {
+            $.ajax({
+                url:'/api/getstu',
+            type:'GET',
+            success: function (data) {
+                $.each(data, function(i,item) {
+                    $('.table').append('<tr> <td>' + data[i]["ID"] + '</td> <td>' + data[i]["SNo"] + '</td><td>' + data[i]["SName"] + '</td></tr>')
+                });
+                console.log(data);
+            },
+                error:function(){}
+
+            });
+        }
+        )
+    </script>
+}

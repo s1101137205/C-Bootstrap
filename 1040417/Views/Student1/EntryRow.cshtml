@@ -1,0 +1,17 @@
+﻿@model _1040417.Models.Student
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Model.SNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.SName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.ModifiedDT)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+    </td>
+</tr>

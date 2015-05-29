@@ -1,0 +1,74 @@
+﻿@model IEnumerable<_0515.Models.Student>
+
+@{
+    ViewBag.Title = "Test0529";
+}
+
+<h2>Test0529</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="nav nav-pills">
+    <li class="dropdown">
+        <a id="drop1" role="button" data-toggle="dropdown" href="#">名單<b class="caret"></b></a>
+        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ACTION1</a></li>
+            <li role="presentation" class="divider"></li>
+        </ul>
+    </li>
+</div>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDT)
+        </th>
+        <th></th>
+    </tr>*@
+
+@*@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>*@
+@section scripts{
+    <script>
+        $(function () {
+            $.ajax({
+                url:'/api/getstu',
+            type:'GET',
+            success: function (data) {
+                $('#menu1').html("");
+                $.each(data, function (i, item) {
+                    $('#menu1').append('<li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="dropdown">' + data[i]["SName"] + '</a></li><li role="presentation" class="divider"></li>')
+                });
+                console.log(data);
+            },
+                error:function(){}
+
+            });
+        }
+        )
+    </script>
+}

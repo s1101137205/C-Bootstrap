@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94d0a55e5e714ba6998d2353a4f2ce58" Name="Diagram1">
+        <EntityTypeShape EntityType="KUASDB1Model.Course" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KUASDB1Model.Student" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KUASDB1Model.StudentCourse" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KUASDB1Model.Teacher" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KUASDB1Model.database_firewall_rules" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="KUASDB1Model.FK_Course_Teacher_TeacherID" ManuallyRouted="false" />
+        <AssociationConnector Association="KUASDB1Model.FK_StudentCourse_Course_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="KUASDB1Model.FK_StudentCourse_Student_StudentID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
